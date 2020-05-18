@@ -4,17 +4,17 @@ const Sushi = (props) => {
   return (
     <div className="sushi">
       <div className="plate" 
-           onClick={/* Give me a callback! */ null}>
+           onClick={() => {props.eatSushi(props.sushiToDisplay)}}>
         { 
           /* Tell me if this sushi has been eaten! */ 
-          false ?
+          props.eatenStatus ?
             null
           :
-            <img src={/* Give me an image source! */ } width="100%" />
+            <img src={props.sushiToDisplay.img_url } width="100%" />
         }
       </div>
       <h4 className="sushi-details">
-        {/* Give me a name! */} - ${/* Give me a price! */}
+        {props.sushiToDisplay.name} - ${props.sushiToDisplay.price}
       </h4>
     </div>
   )
